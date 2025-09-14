@@ -30,9 +30,9 @@ public enum ExtensionClass {
         var dotIndex = sourcePathString.lastIndexOf(DOT);
         var extensionIndex = dotIndex + 1;
         if (dotIndex > 0 && sourcePathString.length() > extensionIndex) {
-            var sourceExtension = sourcePathString.substring(extensionIndex);
+            var sourceExtensionLower = sourcePathString.substring(extensionIndex).toLowerCase();
             for (ExtensionClass extClass : ExtensionClass.values()) {
-                if (sourceExtension.equals(extClass.getLowercaseExtension()))
+                if (sourceExtensionLower.equals(extClass.getLowercaseExtension()))
                     return extClass;
             }
         }

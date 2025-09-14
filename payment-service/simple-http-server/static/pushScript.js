@@ -1,0 +1,3 @@
+function pushFunction() {
+  alert("Hello!");
+}

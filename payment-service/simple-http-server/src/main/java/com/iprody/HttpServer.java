@@ -64,7 +64,7 @@ public class HttpServer {
             String sourcePathString = FILES_FOLDER + path.getFileName();
             var sourcePath = Paths.get(sourcePathString);
             if (Files.exists(sourcePath)) {
-                responseWriter.writeSuccessfulResponse(FileExtension.find(sourcePathString).getContentType(),
+                responseWriter.writeSuccessfulResponse(ExtensionClass.find(sourcePathString).getContentType(),
                         Files.size(sourcePath), sourcePathString);
             } else {
                 responseWriter.writeStatus(HttpResponsePrintWriter.ERROR_404_NOT_FOUND);

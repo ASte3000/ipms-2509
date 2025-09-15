@@ -1,11 +1,10 @@
 package com.iprody.payment.service.app.controller;
 
 import com.iprody.payment.service.app.model.Payment;
-import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -16,7 +15,7 @@ import java.util.stream.Stream;
 @RestController
 @RequestMapping
 public class PaymentController {
-    private static final Map<Long, Payment> map = Stream.of(
+    private static final Map<Long, Payment> paymentsMap = Stream.of(
                     new Payment(1, 1511.11),
                     new Payment(2, 2522.22),
                     new Payment(3, 3533.33),
@@ -26,24 +25,11 @@ public class PaymentController {
 
     @GetMapping("/payments")
     public List<Payment> getPayment() {
-        return map.values().stream().toList();
+        return paymentsMap.values().stream().toList();
     }
 
     @GetMapping("/payments/{id}")
-    public Payment getPayment(@PathVariable("id") long id) {
-        Payment result = map.get(id);
-
-        if (result != null) {
-            return result;
-        } else {
-            throw new ResourceNotFoundException("Payment not found: %d".formatted(id));
-        }
-    }
-
-    @ResponseStatus(value = HttpStatus.NOT_FOUND)
-    private static class ResourceNotFoundException extends RuntimeException {
-        public ResourceNotFoundException(String message) {
-            super(message);
-        }
+    public ResponseEntity<Payment> getPayment(@PathVariable("id") long id) {
+        return ResponseEntity.ofNullable(paymentsMap.get(id));
     }
 }

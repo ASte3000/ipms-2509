@@ -1,8 +1,10 @@
 name: Build Project for PR
 
-on: # Run only when a pull request is created or updated to the main branch
+on:
+  # Run only when a pull request is created or updated to the main branch
   pull_request:
-    branches: [ "main" ]
+    branches:
+      - 'main'
 
 jobs:
   build:

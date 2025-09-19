@@ -19,7 +19,7 @@ public class PaymentController {
                     new Payment(1, 1511.11),
                     new Payment(2, 2522.22),
                     new Payment(3, 3533.33),
-                    new Payment(4, 4544.44)
+                    new Payment(4, 4544.44),
                     new Payment(5, 5555.55))
             .collect(Collectors.toMap(Payment::id, payment -> payment));
 

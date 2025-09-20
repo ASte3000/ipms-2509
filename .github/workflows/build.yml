@@ -22,6 +22,11 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
 
-      # Step 3: Build Maven project
+      # Step 3: Check style
+      - name: Check code style
+        working-directory: ./payment-service-app
+        run: mvn checkstyle:check
+
+      # Step 4: Build Maven project
       - name: Build with Maven
         run: mvn clean install

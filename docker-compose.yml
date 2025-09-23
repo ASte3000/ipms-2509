@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  pay-serv-app:
+    image: pay-serv-app
+    ports:
+      - "8080:8080"

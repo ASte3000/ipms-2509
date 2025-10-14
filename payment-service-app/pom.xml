@@ -12,7 +12,7 @@
 
 	<groupId>com.iprody</groupId>
 	<artifactId>payment-service-app</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.2.3</version>
 	<name>payment-service-app</name>
 	<description>Payment service web application</description>
 

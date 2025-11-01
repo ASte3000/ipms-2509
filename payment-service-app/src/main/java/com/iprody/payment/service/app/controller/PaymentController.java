@@ -17,8 +17,7 @@ import java.util.UUID;
 @RequestMapping
 @RequiredArgsConstructor
 public class PaymentController {
-    @NonNull
-    private PaymentRepository paymentRepository;
+    private final PaymentRepository paymentRepository;
 
     @GetMapping("/payments")
     public List<Payment> getPayment() {

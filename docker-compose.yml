@@ -1,10 +1,10 @@
 version: '3.8'
 
 services:
-#  pay-serv-app:
-#    image: pay-serv-app
-#    ports:
-#      - "8080:8080"
+  pay-serv-app:
+    image: pay-serv-app
+    ports:
+      - "8080:8080"
   postgres:
     image: postgres:16
     container_name: postgres_db

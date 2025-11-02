@@ -13,6 +13,7 @@ databaseChangeLog:
                     primaryKey: true
                     nullable: false
                     unique: true
+                  defaultValueComputed: gen_random_uuid()
               - column:
                   name: inquiry_ref_id
                   type: uuid
